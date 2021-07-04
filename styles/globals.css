@@ -86,3 +86,35 @@ footer ul li a {
 footer ul li a:hover {
   text-decoration: underline;
 }
+
+.card {
+  margin: 25px 0;
+}
+
+.date {
+  color: #857B7B;
+  margin-bottom: 5px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-btn {
+  color: #7950F2;
+  background: #E0D7FA;
+  font-weight: 700;
+  border-radius: 19px;
+  padding: 7px 15px;
+}
+
+.card hr {
+  border: none;
+  border-top: 1px solid #E5E5E5;
+  margin-top: 15px;
+}
+
+article {
+  min-height: 50vh;
+}

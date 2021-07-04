@@ -5,9 +5,10 @@ import realPic from '../public/images/real-me.jpg';
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Post from "../components/Post";
+import { sortByDate } from "../utils";
 
 export default function Home({ posts }) {
-  console.log(posts);
 
   return (
     <div className="container">
@@ -33,7 +34,8 @@ export default function Home({ posts }) {
         <div className="posts">
           {
             posts.map((post, index) => (
-              <h3>{post.frontmatter.title}</h3>
+              <Post post={post} key={index}/>
+              
             ))
           }
         </div>
@@ -80,7 +82,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
+      posts: posts.sort(sortByDate),
     }
   }
 }
