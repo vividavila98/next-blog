@@ -90,12 +90,16 @@
     display: block;
     margin: 0 auto;
     position: relative;
+    transition: top 5s ease-out;
+    transition: left 5s ease-out;
 }
 
 .btn:hover {
     top: 9px;
     left: -9px;
     cursor: pointer;
+    transition: top 5s ease-out;
+    transition: left 5s ease-out;
 }
 
 .outline {
@@ -108,5 +112,34 @@
     left: -9px;
     display: block;
     margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .header {
+        flex-direction: column;
+        padding-top: 25px;
+    }
+
+    .introBox {
+        width: 100%;
+    }
+
+    .picBox {
+        display: none;
+    }
+
+    .subscribe {
+        flex-direction: column;
+        padding-top: 25px;
+    }
+
+    .subBox {
+        width: 100%;
+    }
+
+    .form {
+        margin-left: 0;
+
+    }
 }
 

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -9,6 +10,38 @@ import Post from "../components/Post";
 import { sortByDate } from "../utils";
 
 export default function Home({ posts }) {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState('');
+
+  const handleChange = e => {
+    setEmail(e.target.value);
+    console.log(email);
+  }
+
+  const subscribe = async (e) => {
+    e.preventDefault();
+    
+    const res = await fetch("/api/subscribe", {
+      body: JSON.stringify({
+        email: email
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      method: "POST"
+    });
+
+    const { error } = await res.json();
+
+    console.log(error);
+
+    if (error) {
+      setMessage(error);
+      return;
+    }
+    setMessage("Subscribed! Thank you :-)");
+  }
 
   return (
     <div className="container">
@@ -21,7 +54,7 @@ export default function Home({ posts }) {
         <div className={styles.introBox}>
         <h1 className={styles.title}>From One Junior <br/> Dev to Another</h1>
         <p className={styles.intro}>Hello! My name is Viviana, and I’m a Front-End Web Developer. 
-          As a self-taught developer, I rely on technical blogs like these to help me work towards solutions 
+          As a self-taught developer, I rely on technical blogs like this to help me work towards solutions 
           and become a stronger programmer. As a junior dev, it’s my hope that I can explain concepts more simply 
           and help out my fellow junior devs out there. Good luck!</p>
         </div>
@@ -44,14 +77,21 @@ export default function Home({ posts }) {
       <section className={styles.subscribe}>
         <div className={styles.subBox}>
         <h2 className={styles.subTitle}>Subscribe</h2>
-        <p className={styles.subInfo}>Want to learn more about Front-End Development? Sign up with your email to be notified everytime
+        <p className={styles.subInfo}>Want to learn more about Web Development? Sign up with your email to be notified everytime
            I add a new post!</p>
         </div>
         <div className={styles.subBox}>
         <form className={styles.form}>
-          <label htmlFor="name" className={styles.label}>Email Address</label>
-          <input name="email" type="email" placeholder="dev@gmail.com" className={styles.input}/>
-          <button type="submit" className={styles.btn}> Sign Up</button>
+          <label htmlFor="name" className={styles.label}>{message ? message: "Email Address"}</label>
+          <input 
+            name="email" 
+            type="email" 
+            placeholder="dev@gmail.com" 
+            className={styles.input}
+            value={email}
+            onChange={handleChange}
+            />
+          <button className={styles.btn} onClick={subscribe}>Sign Up</button>
           <span className={styles.outline}></span>
         </form>
         </div>

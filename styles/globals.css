@@ -40,7 +40,7 @@ nav ul li {
   margin-right: 20px;
 }
 
-nav ul li.logo a, nav ul li.logo a:hover {
+nav .logo, nav .logo:hover {
   font-weight: 700;
   font-size: 1.5em;
   background: linear-gradient(to top, #EAFBFF 50%, transparent 50%);
@@ -53,6 +53,11 @@ nav ul li.active a, nav ul li a:hover {
 nav ul li:first-child{
   margin-right: auto;
 }
+
+nav.mobile {
+  display: none;
+}
+
 
 footer {
   background: #5C7489;
@@ -73,7 +78,7 @@ footer ul li {
   margin-right: 20px;
 }
 
-footer ul li:first-child{
+footer ul li:first-child {
   margin-right: auto;
   font-weight: 700;
   font-size: 1.5em;
@@ -109,6 +114,11 @@ footer ul li a:hover {
   padding: 7px 15px;
 }
 
+.card-btn:hover {
+  background: #cbb9fe;
+  color: #6e46e2;
+}
+
 .card hr {
   border: none;
   border-top: 1px solid #E5E5E5;
@@ -117,4 +127,85 @@ footer ul li a:hover {
 
 article {
   min-height: 50vh;
+}
+
+article h1 {
+  margin-bottom: 50px;
+}
+
+pre {
+  background: #F5F6F9;
+  color: #000;
+  padding: 25px;
+  border-radius: 10px;
+  overflow-x: scroll;
+}
+
+h2#concat {
+  margin-top: 30px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 25px;
+  }
+
+  nav.mobile {
+    display: block;
+  }
+
+  nav.desktop {
+    display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+    padding: 15px 0;
+    justify-content: space-between;
+  }
+
+  .ham {
+    background: none;
+    border: none;
+    width: 25px;
+  }
+
+  nav.mobile ul {
+    flex-direction: column;
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  nav.mobile ul.visible {
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+  }
+
+  nav.mobile ul li {
+    margin-bottom: 10px;
+  }
+
+  .card-info {
+    flex-direction: column;
+  }
+  .card-btn {
+    width: 117px;
+    margin-top: 15px;
+  }
+
+  footer ul {
+    flex-direction: column;
+  }
+
+  footer ul li {
+    margin-bottom: 15px;
+  }
+
+  footer ul li:first-child {
+    display: none;
+  }
+
+
 }
