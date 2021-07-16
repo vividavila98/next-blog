@@ -8,10 +8,12 @@ import path from "path";
 import matter from "gray-matter";
 import Post from "../components/Post";
 import { sortByDate } from "../utils";
+import axios from "axios";
 
 export default function Home({ posts }) {
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleChange = e => {
     setEmail(e.target.value);
@@ -20,28 +22,21 @@ export default function Home({ posts }) {
 
   const subscribe = async (e) => {
     e.preventDefault();
-    
-    const res = await fetch("/api/subscribe", {
-      body: JSON.stringify({
-        email: email
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      method: "POST"
-    });
+    console.log(email);
 
-    const { error } = await res.json();
+    setStatus("Loading ...");
+    setErrorMessage(null);
 
-    console.log(error);
-
-    if (error) {
-      setMessage(error);
-      return;
+    try {
+      const response = await axios.post("/api/subscribe", {email});
+      console.log(response);
+      setStatus("Successfuly subscribed!");
+      setEmail("");
+    } catch (e) {
+      setErrorMessage(e.response.data.error);
+      setStatus("Something went wrong :(");
     }
-    setMessage("Subscribed! Thank you :-)");
-  }
+  };
 
   return (
     <div className="container">
@@ -82,7 +77,7 @@ export default function Home({ posts }) {
         </div>
         <div className={styles.subBox}>
         <form className={styles.form}>
-          <label htmlFor="name" className={styles.label}>{message ? message: "Email Address"}</label>
+          <label htmlFor="name" className={styles.label}>Email Address</label>
           <input 
             name="email" 
             type="email" 
@@ -93,6 +88,7 @@ export default function Home({ posts }) {
             />
           <button className={styles.btn} onClick={subscribe}>Sign Up</button>
           <span className={styles.outline}></span>
+          <p className={styles.status}>{status}</p>
         </form>
         </div>
       </section>
