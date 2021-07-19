@@ -17,12 +17,10 @@ export default function Home({ posts }) {
 
   const handleChange = e => {
     setEmail(e.target.value);
-    console.log(email);
   }
 
   const subscribe = async (e) => {
     e.preventDefault();
-    console.log(email);
 
     setStatus("Loading ...");
     setErrorMessage(null);
