@@ -1,9 +1,9 @@
 import axios from "axios";
 
 function getRequestParams(email) {
-  const API_KEY = process.env.MAILCHIMP_API_KEY;
-  const LIST_ID = process.env.MAILCHIMP_AUDIENCE_ID;
-  const DATACENTER = process.env.MAILCHIMP_API_SERVER;
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const LIST_ID = process.env.REACT_APP_AUDIENCE_ID;
+  const DATACENTER = process.env.REACT_APP_API_SERVER;
 
   const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
 
