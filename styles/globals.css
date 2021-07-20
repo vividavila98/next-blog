@@ -63,7 +63,7 @@ footer {
   background: #5C7489;
   color: #fff;
   padding: 50px 0;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 footer ul {
@@ -130,7 +130,14 @@ article {
 }
 
 article h1 {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+  font-size: 2em;
+  background: linear-gradient(to top, #F6E7F9 50%, transparent 50%);
+  display: inline;
+}
+
+article h2 {
+  margin: 35px 0 0 0;
 }
 
 pre {
@@ -141,9 +148,6 @@ pre {
   overflow-x: scroll;
 }
 
-h2#concat {
-  margin-top: 30px;
-}
 
 @media (max-width: 767px) {
   .container {
