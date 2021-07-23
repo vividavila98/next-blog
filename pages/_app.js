@@ -5,14 +5,14 @@ import "../styles/globals.css";
 import Head from "next/head";
 import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
+
 hljs.registerLanguage('javascript', javascript);
-import 'highlight.js/styles/shades-of-purple.css';
 
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
-    hljs.initHighlighting();
-}, []);
+    hljs.highlightAll();
+});
 
   return (
     <>
