@@ -6,8 +6,6 @@ tag: "JavaScript"
 
 # Array Methods
 
-These are some of the array methods that I use pretty frequently.
-
 ## .at()
 
 Takes an integer value, either negative or positive, and returns the value at that index. If the value is negative, it counts back from the end of the array, starting at -1.
@@ -34,8 +32,6 @@ console.log(arr3); // returns [2, 4, 6, 8, 1, 3, 5, 7]
 ## .copyWithin()
 
 Copies part of another array to the designated index without changing the length. (This is a little confusing).
-
-`array.copyWithin(index where copy goes, first index value to copy, last index value to copy)`
 
 ```jsx
 const arr = [a, b, c, d, e, f];

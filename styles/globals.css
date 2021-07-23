@@ -140,12 +140,9 @@ article h2 {
   margin: 35px 0 0 0;
 }
 
-pre {
-  background: #F5F6F9;
-  color: #000;
+ code.hljs {
   padding: 25px;
   border-radius: 10px;
-  overflow-x: scroll;
 }
 
 
