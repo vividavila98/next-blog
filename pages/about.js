@@ -13,11 +13,11 @@ export default function About() {
       </Head>
       <article>
         <h1>A Little About Me</h1>
-        <div className={styles.imgContainer}>
+        {/* <div className={styles.imgContainer}>
         <Image src={animPic} alt="Animated picture of me" />
-        </div>
+        </div> */}
         <p>
-          Hello again! My name is Viviana Davila, and I’m a Front-End Wed 
+          Hello again! My name is Viviana Davila, and I’m a Front-End Web Developer
           based in Los Angeles, CA. I graduated from UC San Diego where I 
           studied Cognitive Science with a specialization in Design &amp; Interaction.
           </p>
@@ -26,9 +26,9 @@ export default function About() {
           Front-End Development. I started to teach myself how to code, starting with HTML, CSS, 
           and JavaScript. From there, I just couldn’t get enough of web development. I honed in on my 
           JavaScript skills and learned how to work with ReactJS during my internships. Since then, I 
-          have worked with some fun technologies, including React Native NextJS, and Redux. </p>
+          have worked with some fun technologies, including React Native, NextJS, and Redux. </p>
           <p>
-          I started this blog for other junior developers who are like me: self-taught, non-CS degree, but with a desire to 
+          I started this blog for other junior developers who are like me: self-taught, non-CS graduate, but with a desire to 
           learn everything there is to do with web development. Navigating this industry can be intimidating, which is why I feel 
           it is so important to help out others in this community. I still have SO much left to learn, but this is my way of contributing 
           to a group that has given me so much already! 

@@ -44,6 +44,7 @@ nav .logo, nav .logo:hover {
   font-weight: 700;
   font-size: 1.5em;
   background: linear-gradient(to top, #EAFBFF 50%, transparent 50%);
+  cursor: pointer;
 }
 
 nav ul li.active a, nav ul li a:hover {
