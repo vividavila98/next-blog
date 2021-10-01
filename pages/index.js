@@ -45,7 +45,7 @@ export default function Home({ posts }) {
       </Head>
       <header className={styles.header}>
         <div className={styles.introBox}>
-        <h1 className={styles.title}>From One Junior <br/> Dev to Another</h1>
+        <h1 className={styles.title}>Viviana Davila</h1>
         <p className={styles.intro}>Hello! My name is Viviana, and I’m a Front-End Web Developer. 
           As a self-taught developer, I rely on technical blogs like this to help me work towards solutions 
           and become a stronger programmer. As a junior dev, it’s my hope that I can explain concepts more simply 
